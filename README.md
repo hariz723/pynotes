@@ -53,6 +53,18 @@ Go to branch on the same page
 select "main" branch and "docs" folder
 ```
 
+### To add files 
+```
+add ipynb in notebooks folder
+
+run -- 'py make.py'
+
+'pelican content'
+
+then 'git push'
+
+```
+
 ![1731731240445](image/README/1731731240445.png)
 
 ### Screenshots
