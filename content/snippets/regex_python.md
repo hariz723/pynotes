@@ -179,13 +179,37 @@ if match:
 
 
 ```python
+# more e.g based on group func
+
+import re
+
+pattern = r"(\d+)"
+text = "My number is 12345."
+match = re.search(pattern, text)
+
+if match:
+    print("Entire Match:", match.group(0))  # Output: Entire Match: 12345
 
 ```
+
+    Entire Match: 12345
+
 
 
 ```python
+import re
+
+pattern = r"(\d+)-(\d+)-(\d+)"  # Matches a date format like '2024-11-22'
+text = "Today's date: 2024-11-22."
+match = re.search(pattern, text)
+
+if match:
+    print("All Groups:", match.groups())  # Output: ('2024', '11', '22')
 
 ```
+
+    All Groups: ('2024', '11', '22')
+
 
 
 ```python
