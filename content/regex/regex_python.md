@@ -2,8 +2,8 @@
 title: Regex Python
 date: 2024-11-22
 author: Your Name
-cell_count: 14
-score: 10
+cell_count: 22
+score: 20
 ---
 
 ```python
@@ -39,7 +39,7 @@ def func_match_word(pattern):
     match = re.search(pattern, text)  # search method search the Word we given inside
     if match:
         print(f"Matched: {match.group()}")  
-    else: 
+    else:
         print(f'No matches found')
 
 func_match_word(pattern=r"\bThis\b")
@@ -231,6 +231,113 @@ if match:
 
 
 ```python
+import re
+
+pattern = r"(\d{4})-(\d{2})-(\d{2})"  # Matches dates in YYYY-MM-DD format
+text = "Today's date is 2024-11-22."
+
+match = re.search(pattern, text)
+if match:
+    print("Year:", match.group(1))  # Output: Year: 2024
+    print("Month:", match.group(2))  # Output: Month: 11
+    print("Day:", match.group(3))  # Output: Day: 22
+
+```
+
+    Year: 2024
+    Month: 11
+    Day: 22
+
+
+
+```python
+import re
+
+pattern = r"(\w+)\.(\w+)"  # Matches filenames with extensions
+text = "file1.txt, file2.pdf, file3.docx"
+
+matches = re.findall(pattern, text)
+print(f"matches: {matches}")
+for filename, extension in matches:
+    print(f"Filename: {filename}, Extension: {extension}")
+# Output:
+# Filename: file1, Extension: txt
+# Filename: file2, Extension: pdf
+# Filename: file3, Extension: docx
+
+```
+
+    matches: [('file1', 'txt'), ('file2', 'pdf'), ('file3', 'docx')]
+    Filename: file1, Extension: txt
+    Filename: file2, Extension: pdf
+    Filename: file3, Extension: docx
+
+
+
+```python
+import re
+
+pattern = r"^(\w+)@(\w+)\.(\w+)$"  # Matches a basic email pattern
+emails = ["test@gmail.com", "invalid-email", "user123@domain.org"]
+
+for email in emails:
+    match = re.match(pattern, email)
+    if match:
+        print(f"Valid Email: {email}, Username: {match.group(1)}, Domain: {match.group(2)}")
+    else:
+        print(f"Invalid Email: {email}")
+# Output:
+# Valid Email: test@gmail.com, Username: test, Domain: gmail
+# Invalid Email: invalid-email
+# Valid Email: user123@domain.org, Username: user123, Domain: domain
+
+```
+
+    Valid Email: test@gmail.com, Username: test, Domain: gmail
+    Invalid Email: invalid-email
+    Valid Email: user123@domain.org, Username: user123, Domain: domain
+
+
+
+```python
+import re
+
+pattern = r"\+?(\d{1,3})-(\d{3})-(\d{3})-(\d{4})"  # Matches phone numbers like +1-123-456-7890
+text = "Contact: +1-123-456-7890 or 123-456-7890."
+
+matches = re.findall(pattern, text)
+for match in matches:
+    print("Country Code:", match[0], "Phone Number:", "-".join(match[1:]))
+# Output:
+# Country Code: 1 Phone Number: 123-456-7890
+# Country Code:  Phone Number: 123-456-7890
+```
+
+    Country Code: 1 Phone Number: 123-456-7890
+
+
+
+```python
+
+```
+
+
+```python
+
+```
+
+
+```python
+
+```
+
+
+```python
+
+```
+
+
+```python
 
 ```
 
@@ -251,4 +358,4 @@ if match:
 
 
 ---
-**Score: 10**
+**Score: 20**
