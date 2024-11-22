@@ -6,11 +6,11 @@
 
     <title>My Python Note Books - regex</title>
 
-    <link rel="stylesheet" href="/theme/css/normalize.css" />
-    <link rel="stylesheet" href="/theme/css/foundation.min.css" />
-    <link rel="stylesheet" href="/theme/css/style.css" />
-    <link rel="stylesheet" href="/theme/css/pygments.css" />	
-    <script src="/theme/js/modernizr.js"></script>
+    <link rel="stylesheet" href="https://hariz723.github.io/pynotes/theme/css/normalize.css" />
+    <link rel="stylesheet" href="https://hariz723.github.io/pynotes/theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="https://hariz723.github.io/pynotes/theme/css/style.css" />
+    <link rel="stylesheet" href="https://hariz723.github.io/pynotes/theme/css/pygments.css" />	
+    <script src="https://hariz723.github.io/pynotes/theme/js/modernizr.js"></script>
 </head>
 
 <body>
@@ -20,7 +20,7 @@
 <div class="top-bar">
 <div class="row">
     <div class="large-9 large-centered columns">
-	    <h1><a href="">My Python Note Books</a></h1>
+	    <h1><a href="https://hariz723.github.io/pynotes">My Python Note Books</a></h1>
     </div>
 </div>
 </div>
@@ -46,7 +46,7 @@
         
 
             <article>
-                <a href="/regex-python.html"><h3 class="article-title">Regex Python</h3></a>
+                <a href="https://hariz723.github.io/pynotes/regex-python.html"><h3 class="article-title">Regex Python</h3></a>
 <h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
 </h6>
 
@@ -327,7 +327,29 @@ Filename: file3, Extension: docx
 <div class="highlight"><pre><span></span><code>Country Code: 1 Phone Number: 123-456-7890
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="k">def</span> <span class="nf">check_password</span><span class="p">(</span><span class="n">password</span><span class="p">):</span>
+    <span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$%^&amp;+=]).{8,}$&quot;</span>
+    <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;Strong Password&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;Weak Password&quot;</span>
+
+<span class="n">passwords</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Password1!&quot;</span><span class="p">,</span> <span class="s2">&quot;weak&quot;</span><span class="p">,</span> <span class="s2">&quot;Strong1@&quot;</span><span class="p">,</span> <span class="s2">&quot;1234&quot;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">pwd</span> <span class="ow">in</span> <span class="n">passwords</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pwd</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">check_password</span><span class="p">(</span><span class="n">pwd</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># Output:</span>
+<span class="c1"># Password1!: Strong Password</span>
+<span class="c1"># weak: Weak Password</span>
+<span class="c1"># Strong1@: Strong Password</span>
+<span class="c1"># 1234: Weak Password</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Password1!: Weak Password
+weak: Weak Password
+Strong1@: Strong Password
+1234: Weak Password
 </code></pre></div>
 
 <div class="highlight"><pre><span></span><code>
@@ -352,7 +374,7 @@ Filename: file3, Extension: docx
 </code></pre></div>
 
 <hr>
-<p><strong>Score: 20</strong></p><p class="subheader">Category: <a href="/category/regex.html">regex</a>
+<p><strong>Score: 20</strong></p><p class="subheader">Category: <a href="https://hariz723.github.io/pynotes/category/regex.html">regex</a>
 
 </p>
 
@@ -379,17 +401,17 @@ Filename: file3, Extension: docx
     <aside class="large-3 columns">
         <h5 class="sidebar-title">Site</h5>
         <ul class="side-nav">
-            <li><a href="/archives.html">Archives</a>
-            <li><a href="/tags.html">Tags</a>
+            <li><a href="https://hariz723.github.io/pynotes/archives.html">Archives</a>
+            <li><a href="https://hariz723.github.io/pynotes/tags.html">Tags</a>
         </ul>
 
 		
         <h5 class="sidebar-title">Categories</h5>
         <ul class="side-nav">
-            <li><a href="/category/basics.html">basics</a></li>
-            <li><a href="/category/pandas-work.html">pandas-work</a></li>
-            <li><a href="/category/python.html">python</a></li>
-            <li><a href="/category/regex.html">regex</a></li>
+            <li><a href="https://hariz723.github.io/pynotes/category/basics.html">basics</a></li>
+            <li><a href="https://hariz723.github.io/pynotes/category/pandas-work.html">pandas-work</a></li>
+            <li><a href="https://hariz723.github.io/pynotes/category/python.html">python</a></li>
+            <li><a href="https://hariz723.github.io/pynotes/category/regex.html">regex</a></li>
    
         </ul>
 

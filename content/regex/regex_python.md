@@ -318,8 +318,31 @@ for match in matches:
 
 
 ```python
+import re
+
+def check_password(password):
+    pattern = r"^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$%^&+=]).{8,}$"
+    if re.match(pattern, password):
+        return "Strong Password"
+    else:
+        return "Weak Password"
+
+passwords = ["Password1!", "weak", "Strong1@", "1234"]
+for pwd in passwords:
+    print(f"{pwd}: {check_password(pwd)}")
+# Output:
+# Password1!: Strong Password
+# weak: Weak Password
+# Strong1@: Strong Password
+# 1234: Weak Password
 
 ```
+
+    Password1!: Weak Password
+    weak: Weak Password
+    Strong1@: Strong Password
+    1234: Weak Password
+
 
 
 ```python
