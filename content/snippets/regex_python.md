@@ -130,13 +130,52 @@ func_split_the_word(r'[ ,]')
 
 
 ```python
+import re
 
+
+def func_find_name_gmail(pattern):
+# Extract groups from a string
+    # pattern = r"(\w+)@(\w+)\.(\w+)"  # Matches an email address
+    text = "My email is Hari@gmail.com."
+    match = re.search(pattern, text)
+    # if match:
+    print(f"Username: {match.group(1)}")   # Output: Username: example
+    print(f"Domain  : {match.group(2)}")   # Output: Domain: gmail
+    print(f"TLD     : {match.group(3)}")   # Output: TLD: com
+    # else:
+    #     print(f'No matches found')
+
+func_find_name_gmail(r"(\w+)@(\w+).(\w+)")
 ```
+
+    Username: Hari
+    Domain  : gmail
+    TLD     : com
+
 
 
 ```python
+import re
+
+pattern = r"((\d+)-(\d+))-(\d+)"
+text = "Example: 2024-11-22"
+match = re.search(pattern, text)
+
+if match:
+    print("Entire Match:", match.group(0))  # Output: 2024-11-22
+    print("Group 1:", match.group(1))       # Output: 2024-11
+    print("Group 2:", match.group(2))       # Output: 2024
+    print("Group 3:", match.group(3))       # Output: 11
+    print("Group 4:", match.group(4))       # Output: 22
 
 ```
+
+    Entire Match: 2024-11-22
+    Group 1: 2024-11
+    Group 2: 2024
+    Group 3: 11
+    Group 4: 22
+
 
 
 ```python

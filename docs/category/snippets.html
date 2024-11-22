@@ -163,10 +163,48 @@ Matches : [&#39;100&#39;, &#39;15&#39;]
 <span class="k">[&#39;apple&#39;, &#39;&#39;, &#39;orange&#39;, &#39;banana&#39;]</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+
+
+<span class="k">def</span> <span class="nf">func_find_name_gmail</span><span class="p">(</span><span class="n">pattern</span><span class="p">):</span>
+<span class="c1"># Extract groups from a string</span>
+    <span class="c1"># pattern = r&quot;(\w+)@(\w+)\.(\w+)&quot;  # Matches an email address</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;My email is Hari@gmail.com.&quot;</span>
+    <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+    <span class="c1"># if match:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Username: </span><span class="si">{</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>   <span class="c1"># Output: Username: example</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Domain  : </span><span class="si">{</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>   <span class="c1"># Output: Domain: gmail</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;TLD     : </span><span class="si">{</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>   <span class="c1"># Output: TLD: com</span>
+    <span class="c1"># else:</span>
+    <span class="c1">#     print(f&#39;No matches found&#39;)</span>
+
+<span class="n">func_find_name_gmail</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(\w+)@(\w+).(\w+)&quot;</span><span class="p">)</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code>
+<div class="highlight"><pre><span></span><code><span class="n">Username</span><span class="o">:</span><span class="w"> </span><span class="n">Hari</span>
+<span class="n">Domain</span><span class="w">  </span><span class="o">:</span><span class="w"> </span><span class="n">gmail</span>
+<span class="n">TLD</span><span class="w">     </span><span class="o">:</span><span class="w"> </span><span class="n">com</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;((\d+)-(\d+))-(\d+)&quot;</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Example: 2024-11-22&quot;</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Entire Match:&quot;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>  <span class="c1"># Output: 2024-11-22</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Group 1:&quot;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>       <span class="c1"># Output: 2024-11</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Group 2:&quot;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>       <span class="c1"># Output: 2024</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Group 3:&quot;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>       <span class="c1"># Output: 11</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Group 4:&quot;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>       <span class="c1"># Output: 22</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Entire Match: 2024-11-22
+Group 1: 2024-11
+Group 2: 2024
+Group 3: 11
+Group 4: 22
 </code></pre></div>
 
 <div class="highlight"><pre><span></span><code>
