@@ -213,8 +213,21 @@ if match:
 
 
 ```python
+import re
 
+# Case-insensitive search
+pattern = r"hello"
+text = "Hello world"
+match = re.search(pattern, text, re.IGNORECASE)
+if match:
+    print("Found:", match.group())  # Output: Found: Hello
+
+
+# new here re.IGNORECASE
 ```
+
+    Found: Hello
+
 
 
 ```python

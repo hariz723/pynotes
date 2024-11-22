@@ -236,7 +236,20 @@ Group 4: 22
 <div class="highlight"><pre><span></span><code>All Groups: (&#39;2024&#39;, &#39;11&#39;, &#39;22&#39;)
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="c1"># Case-insensitive search</span>
+<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;hello&quot;</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Hello world&quot;</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Found:&quot;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>  <span class="c1"># Output: Found: Hello</span>
+
+
+<span class="c1"># new here re.IGNORECASE</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">Found</span><span class="o">:</span><span class="w"> </span><span class="n">Hello</span>
 </code></pre></div>
 
 <div class="highlight"><pre><span></span><code>
