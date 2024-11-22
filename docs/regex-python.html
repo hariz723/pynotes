@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Regex Python</title>
+
+    <link rel="stylesheet" href="https://hariz723.github.io/pynotes/theme/css/normalize.css" />
+    <link rel="stylesheet" href="https://hariz723.github.io/pynotes/theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="https://hariz723.github.io/pynotes/theme/css/style.css" />
+    <link rel="stylesheet" href="https://hariz723.github.io/pynotes/theme/css/pygments.css" />	
+    <script src="https://hariz723.github.io/pynotes/theme/js/modernizr.js"></script>
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+	    <h1><a href="https://hariz723.github.io/pynotes">My Python Note Books</a></h1>
+    </div>
+</div>
+</div>
+
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
+
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+<article>
+    <header>
+        <h3 class="article-title"><a href="https://hariz723.github.io/pynotes/regex-python.html" rel="bookmark"
+        title="Permalink to Regex Python">Regex Python</a></h3>
+    </header>
+
+<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+</h6>
+
+
+    <div class="highlight"><pre><span></span><code><span class="c1"># cheatsheet for regex :</span>
+<span class="c1"># \d : Matches any digit (0-9).</span>
+<span class="c1"># \w : Matches any word character (letters, digits, underscore).</span>
+<span class="c1"># \s : Matches any whitespace (space, tab, newline).</span>
+<span class="c1"># \b : Matches a word boundary.</span>
+<span class="c1"># .  : Matches any character except newline.</span>
+<span class="c1"># *  : Matches 0 or more repetitions of the preceding pattern.</span>
+<span class="c1"># +  : Matches 1 or more repetitions of the preceding pattern.</span>
+<span class="c1"># ?  : Matches 0 or 1 repetition of the preceding pattern.</span>
+<span class="c1"># [] : Matches any character inside the brackets.</span>
+
+
+<span class="c1"># key methods in regex : </span>
+<span class="c1"># re.match()   : Matches a pattern only at the start of the string.</span>
+<span class="c1"># re.search()  : Searches for a pattern anywhere in the string.</span>
+<span class="c1"># re.findall() : Returns all non-overlapping matches as a list.</span>
+<span class="c1"># re.sub()     : Replaces occurrences of a pattern.</span>
+<span class="c1"># re.split()   : Splits a string by the occurrences of a pattern.</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+
+
+<span class="k">def</span> <span class="nf">func_match_word</span><span class="p">(</span><span class="n">pattern</span><span class="p">):</span>
+    <span class="c1"># Match a word</span>
+    <span class="c1"># pattern = r&quot;\bis\b&quot;  # Matches &#39;word&#39; as a whole word</span>
+    <span class="n">text</span>  <span class="o">=</span> <span class="s2">&quot;This is a word in a sentence.&quot;</span>
+    <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>  <span class="c1"># search method search the Word we given inside</span>
+    <span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Matched: </span><span class="si">{</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  
+    <span class="k">else</span><span class="p">:</span> 
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;No matches found&#39;</span><span class="p">)</span>
+
+<span class="n">func_match_word</span><span class="p">(</span><span class="n">pattern</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;\bThis\b&quot;</span><span class="p">)</span>
+<span class="n">func_match_word</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\bis&#39;</span><span class="p">)</span>
+
+<span class="c1"># unique char here \b{your word to find}</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">Matched</span><span class="o">:</span><span class="w"> </span><span class="n">This</span>
+<span class="n">Matched</span><span class="o">:</span><span class="w"> </span><span class="k">is</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+
+
+<span class="k">def</span> <span class="nf">func_find_all_matches</span><span class="p">(</span><span class="n">pattern</span><span class="p">):</span>
+    <span class="c1"># Find all numbers in a string</span>
+    <span class="c1"># pattern = r&quot;\d+&quot;  # Matches one or more digits</span>
+    <span class="n">text</span>    <span class="o">=</span> <span class="s2">&quot;The price is 100 dollars and the tax is 15 dollars.&quot;</span>
+    <span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+    <span class="c1"># print(matches)  # Output: [&#39;100&#39;, &#39;15&#39;]</span>
+    <span class="k">if</span> <span class="n">matches</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Matches : </span><span class="si">{</span><span class="n">matches</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No matches found&quot;</span><span class="p">)</span>
+
+
+<span class="n">func_find_all_matches</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\d&quot;</span><span class="p">)</span>
+<span class="n">func_find_all_matches</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\d+&quot;</span><span class="p">)</span>
+
+<span class="c1"># unquie char here \d+ find all numbers</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Matches : [&#39;1&#39;, &#39;0&#39;, &#39;0&#39;, &#39;1&#39;, &#39;5&#39;]
+Matches : [&#39;100&#39;, &#39;15&#39;]
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+
+
+<span class="k">def</span> <span class="nf">func_replace_the_char</span><span class="p">(</span><span class="n">pattern</span><span class="p">):</span>
+    <span class="c1"># Replace all vowels with &#39;*&#39;</span>
+    <span class="c1"># pattern = r&quot;[aeiou]&quot;</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Hello World&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">result</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;result : </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>  <span class="c1"># Output: H*ll* W*rld</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;no Matrches found&#39;</span><span class="p">)</span>
+
+
+<span class="n">func_replace_the_char</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[aei]&#39;</span><span class="p">)</span>
+<span class="n">func_replace_the_char</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[He]&#39;</span><span class="p">)</span>
+
+<span class="c1"># unique char here - [] matches all thee things inside this</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">result</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">H</span><span class="o">*</span><span class="n">llo</span><span class="w"> </span><span class="n">World</span>
+<span class="n">result</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="o">**</span><span class="n">llo</span><span class="w"> </span><span class="n">World</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+
+
+<span class="k">def</span> <span class="nf">func_split_the_word</span><span class="p">(</span><span class="n">pattern</span><span class="p">):</span>
+    <span class="c1"># Split on spaces or commas</span>
+    <span class="c1"># pattern = r&quot;[ ,]&quot;</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;apple, orange banana&quot;</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  <span class="c1"># Output: [&#39;apple&#39;, &#39;&#39;, &#39;orange&#39;, &#39;banana&#39;]</span>
+
+<span class="n">func_split_the_word</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[, ]&#39;</span><span class="p">)</span>
+<span class="n">func_split_the_word</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[ ,]&#39;</span><span class="p">)</span>
+
+<span class="c1"># split th word [, ]</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">[&#39;apple&#39;, &#39;&#39;, &#39;orange&#39;, &#39;banana&#39;]</span>
+<span class="k">[&#39;apple&#39;, &#39;&#39;, &#39;orange&#39;, &#39;banana&#39;]</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 10</strong></p>
+<p class="subheader">Category: <a href="https://hariz723.github.io/pynotes/category/snippets.html">snippets</a>
+
+</p>
+
+
+
+
+</article>
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Sidebar -->
+    <aside class="large-3 columns">
+        <h5 class="sidebar-title">Site</h5>
+        <ul class="side-nav">
+            <li><a href="https://hariz723.github.io/pynotes/archives.html">Archives</a>
+            <li><a href="https://hariz723.github.io/pynotes/tags.html">Tags</a>
+        </ul>
+
+		
+        <h5 class="sidebar-title">Categories</h5>
+        <ul class="side-nav">
+            <li><a href="https://hariz723.github.io/pynotes/category/basics.html">basics</a></li>
+            <li><a href="https://hariz723.github.io/pynotes/category/pandas-work.html">pandas-work</a></li>
+            <li><a href="https://hariz723.github.io/pynotes/category/python.html">python</a></li>
+            <li><a href="https://hariz723.github.io/pynotes/category/snippets.html">snippets</a></li>
+   
+        </ul>
+
+		
+        <h5 class="sidebar-title">Social</h5>
+        <ul class="side-nav">
+            <li><a href="https://github.com/hariz723/">GitHub</a></li>
+            <li><a href="<linkedin handle>">LinkedIn</a></li>
+        </ul>
+
+    </aside> <!-- End Sidebar -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-6 columns">
+              <!--                  <p>My Python Note Books by Hari</p> -->
+            </div>
+            </div>
+    </div>
+</footer>
+</body>
+</html>
