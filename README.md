@@ -32,7 +32,7 @@ change the necessary changes to update:
 
 ### Verify Local
 ```
-PELICAN_ENV=local pelican content
+    PELICAN_ENV=local pelican content
 
 pelican --listen
     this will run the local server
