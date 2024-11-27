@@ -47,7 +47,7 @@
 
             <article>
                 <a href="https://hariz723.github.io/pynotes/regex-python.html"><h3 class="article-title">Regex Python</h3></a>
-<h6 class="subheader" title="2024-11-22T00:00:00-05:00">Fri 22 November 2024
+<h6 class="subheader" title="2024-11-27T00:00:00-05:00">Wed 27 November 2024
 </h6>
 
 
@@ -72,11 +72,10 @@
 </code></pre></div>
 
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+</code></pre></div>
 
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">func_match_word</span><span class="p">(</span><span class="n">pattern</span><span class="p">):</span>
 
-<span class="k">def</span> <span class="nf">func_match_word</span><span class="p">(</span><span class="n">pattern</span><span class="p">):</span>
-    <span class="c1"># Match a word</span>
-    <span class="c1"># pattern = r&quot;\bis\b&quot;  # Matches &#39;word&#39; as a whole word</span>
     <span class="n">text</span>  <span class="o">=</span> <span class="s2">&quot;This is a word in a sentence.&quot;</span>
     <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>  <span class="c1"># search method search the Word we given inside</span>
     <span class="k">if</span> <span class="n">match</span><span class="p">:</span>
@@ -84,7 +83,11 @@
     <span class="k">else</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;No matches found&#39;</span><span class="p">)</span>
 
-<span class="n">func_match_word</span><span class="p">(</span><span class="n">pattern</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;\bThis\b&quot;</span><span class="p">)</span>
+<span class="c1"># Match a word</span>
+<span class="c1"># pattern = r&quot;\bis\b&quot;  # Matches &#39;word&#39; as a whole word</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">func_match_word</span><span class="p">(</span><span class="n">pattern</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;\bThis\b&quot;</span><span class="p">)</span>
 <span class="n">func_match_word</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\bis&#39;</span><span class="p">)</span>
 
 <span class="c1"># unique char here \b{your word to find}</span>
@@ -95,9 +98,9 @@
 </code></pre></div>
 
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+</code></pre></div>
 
-
-<span class="k">def</span> <span class="nf">func_find_all_matches</span><span class="p">(</span><span class="n">pattern</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">func_find_all_matches</span><span class="p">(</span><span class="n">pattern</span><span class="p">):</span>
     <span class="c1"># Find all numbers in a string</span>
     <span class="c1"># pattern = r&quot;\d+&quot;  # Matches one or more digits</span>
     <span class="n">text</span>    <span class="o">=</span> <span class="s2">&quot;The price is 100 dollars and the tax is 15 dollars.&quot;</span>
@@ -107,9 +110,9 @@
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Matches : </span><span class="si">{</span><span class="n">matches</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No matches found&quot;</span><span class="p">)</span>
+</code></pre></div>
 
-
-<span class="n">func_find_all_matches</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\d&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">func_find_all_matches</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\d&quot;</span><span class="p">)</span>
 <span class="n">func_find_all_matches</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\d+&quot;</span><span class="p">)</span>
 
 <span class="c1"># unquie char here \d+ find all numbers</span>
@@ -144,16 +147,17 @@ Matches : [&#39;100&#39;, &#39;15&#39;]
 </code></pre></div>
 
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+</code></pre></div>
 
-
-<span class="k">def</span> <span class="nf">func_split_the_word</span><span class="p">(</span><span class="n">pattern</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">func_split_the_word</span><span class="p">(</span><span class="n">pattern</span><span class="p">):</span>
     <span class="c1"># Split on spaces or commas</span>
     <span class="c1"># pattern = r&quot;[ ,]&quot;</span>
     <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;apple, orange banana&quot;</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  <span class="c1"># Output: [&#39;apple&#39;, &#39;&#39;, &#39;orange&#39;, &#39;banana&#39;]</span>
+</code></pre></div>
 
-<span class="n">func_split_the_word</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[, ]&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">func_split_the_word</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[, ]&#39;</span><span class="p">)</span>
 <span class="n">func_split_the_word</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[ ,]&#39;</span><span class="p">)</span>
 
 <span class="c1"># split th word [, ]</span>
@@ -164,9 +168,9 @@ Matches : [&#39;100&#39;, &#39;15&#39;]
 </code></pre></div>
 
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+</code></pre></div>
 
-
-<span class="k">def</span> <span class="nf">func_find_name_gmail</span><span class="p">(</span><span class="n">pattern</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">func_find_name_gmail</span><span class="p">(</span><span class="n">pattern</span><span class="p">):</span>
 <span class="c1"># Extract groups from a string</span>
     <span class="c1"># pattern = r&quot;(\w+)@(\w+)\.(\w+)&quot;  # Matches an email address</span>
     <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;My email is Hari@gmail.com.&quot;</span>
@@ -177,8 +181,9 @@ Matches : [&#39;100&#39;, &#39;15&#39;]
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;TLD     : </span><span class="si">{</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>   <span class="c1"># Output: TLD: com</span>
     <span class="c1"># else:</span>
     <span class="c1">#     print(f&#39;No matches found&#39;)</span>
+</code></pre></div>
 
-<span class="n">func_find_name_gmail</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(\w+)@(\w+).(\w+)&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">func_find_name_gmail</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(\w+)@(\w+).(\w+)&quot;</span><span class="p">)</span>
 </code></pre></div>
 
 <div class="highlight"><pre><span></span><code><span class="n">Username</span><span class="o">:</span><span class="w"> </span><span class="n">Hari</span>
@@ -187,12 +192,14 @@ Matches : [&#39;100&#39;, &#39;15&#39;]
 </code></pre></div>
 
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+</code></pre></div>
 
-<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;((\d+)-(\d+))-(\d+)&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;((\d+)-(\d+))-(\d+)&quot;</span>
 <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Example: 2024-11-22&quot;</span>
 <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</code></pre></div>
 
-<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">match</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Entire Match:&quot;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>  <span class="c1"># Output: 2024-11-22</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Group 1:&quot;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>       <span class="c1"># Output: 2024-11</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Group 2:&quot;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>       <span class="c1"># Output: 2024</span>
@@ -208,14 +215,18 @@ Group 4: 22
 </code></pre></div>
 
 <div class="highlight"><pre><span></span><code><span class="c1"># more e.g based on group func</span>
-
 <span class="kn">import</span> <span class="nn">re</span>
+</code></pre></div>
 
-<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;(\d+)&quot;</span>
+<div class="highlight"><pre><span></span><code>Entire Match: 12345
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;(\d+)&quot;</span>
 <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;My number is 12345.&quot;</span>
 <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</code></pre></div>
 
-<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">match</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Entire Match:&quot;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>  <span class="c1"># Output: Entire Match: 12345</span>
 </code></pre></div>
 
@@ -223,12 +234,17 @@ Group 4: 22
 </code></pre></div>
 
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+</code></pre></div>
 
-<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;(\d+)-(\d+)-(\d+)&quot;</span>  <span class="c1"># Matches a date format like &#39;2024-11-22&#39;</span>
+<div class="highlight"><pre><span></span><code>All Groups: (&#39;2024&#39;, &#39;11&#39;, &#39;22&#39;)
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;(\d+)-(\d+)-(\d+)&quot;</span>  <span class="c1"># Matches a date format like &#39;2024-11-22&#39;</span>
 <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Today&#39;s date: 2024-11-22.&quot;</span>
 <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</code></pre></div>
 
-<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">match</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All Groups:&quot;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">groups</span><span class="p">())</span>  <span class="c1"># Output: (&#39;2024&#39;, &#39;11&#39;, &#39;22&#39;)</span>
 </code></pre></div>
 
@@ -236,28 +252,32 @@ Group 4: 22
 </code></pre></div>
 
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+</code></pre></div>
 
+<div class="highlight"><pre><span></span><code><span class="c1"># new here re.IGNORECASE</span>
 <span class="c1"># Case-insensitive search</span>
 <span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;hello&quot;</span>
 <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Hello world&quot;</span>
 <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">match</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Found:&quot;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>  <span class="c1"># Output: Found: Hello</span>
-
-
-<span class="c1"># new here re.IGNORECASE</span>
 </code></pre></div>
 
 <div class="highlight"><pre><span></span><code><span class="n">Found</span><span class="o">:</span><span class="w"> </span><span class="n">Hello</span>
 </code></pre></div>
 
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+</code></pre></div>
 
-<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;(\d</span><span class="si">{4}</span><span class="s2">)-(\d</span><span class="si">{2}</span><span class="s2">)-(\d</span><span class="si">{2}</span><span class="s2">)&quot;</span>  <span class="c1"># Matches dates in YYYY-MM-DD format</span>
+<div class="highlight"><pre><span></span><code><span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;(\d</span><span class="si">{4}</span><span class="s2">)-(\d</span><span class="si">{2}</span><span class="s2">)-(\d</span><span class="si">{2}</span><span class="s2">)&quot;</span>  <span class="c1"># Matches dates in YYYY-MM-DD format</span>
 <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Today&#39;s date is 2024-11-22.&quot;</span>
 
 <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">match</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Year:&quot;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>  <span class="c1"># Output: Year: 2024</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Month:&quot;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>  <span class="c1"># Output: Month: 11</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Day:&quot;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>  <span class="c1"># Output: Day: 22</span>
@@ -269,13 +289,19 @@ Group 4: 22
 </code></pre></div>
 
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+</code></pre></div>
 
-<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;(\w+)\.(\w+)&quot;</span>  <span class="c1"># Matches filenames with extensions</span>
+<div class="highlight"><pre><span></span><code><span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;(\w+)\.(\w+)&quot;</span>  <span class="c1"># Matches filenames with extensions</span>
 <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;file1.txt, file2.pdf, file3.docx&quot;</span>
 
 <span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;matches: </span><span class="si">{</span><span class="n">matches</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">filename</span><span class="p">,</span> <span class="n">extension</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">:</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>matches: [(&#39;file1&#39;, &#39;txt&#39;), (&#39;file2&#39;, &#39;pdf&#39;), (&#39;file3&#39;, &#39;docx&#39;)]
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">filename</span><span class="p">,</span> <span class="n">extension</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Filename: </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">, Extension: </span><span class="si">{</span><span class="n">extension</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="c1"># Output:</span>
 <span class="c1"># Filename: file1, Extension: txt</span>
@@ -283,18 +309,19 @@ Group 4: 22
 <span class="c1"># Filename: file3, Extension: docx</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code>matches: [(&#39;file1&#39;, &#39;txt&#39;), (&#39;file2&#39;, &#39;pdf&#39;), (&#39;file3&#39;, &#39;docx&#39;)]
-Filename: file1, Extension: txt
-Filename: file2, Extension: pdf
-Filename: file3, Extension: docx
+<div class="highlight"><pre><span></span><code><span class="n">Filename</span><span class="o">:</span><span class="w"> </span><span class="n">file1</span><span class="o">,</span><span class="w"> </span><span class="n">Extension</span><span class="o">:</span><span class="w"> </span><span class="n">txt</span>
+<span class="n">Filename</span><span class="o">:</span><span class="w"> </span><span class="n">file2</span><span class="o">,</span><span class="w"> </span><span class="n">Extension</span><span class="o">:</span><span class="w"> </span><span class="n">pdf</span>
+<span class="n">Filename</span><span class="o">:</span><span class="w"> </span><span class="n">file3</span><span class="o">,</span><span class="w"> </span><span class="n">Extension</span><span class="o">:</span><span class="w"> </span><span class="n">docx</span>
 </code></pre></div>
 
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+</code></pre></div>
 
-<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;^(\w+)@(\w+)\.(\w+)$&quot;</span>  <span class="c1"># Matches a basic email pattern</span>
+<div class="highlight"><pre><span></span><code><span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;^(\w+)@(\w+)\.(\w+)$&quot;</span>  <span class="c1"># Matches a basic email pattern</span>
 <span class="n">emails</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;test@gmail.com&quot;</span><span class="p">,</span> <span class="s2">&quot;invalid-email&quot;</span><span class="p">,</span> <span class="s2">&quot;user123@domain.org&quot;</span><span class="p">]</span>
+</code></pre></div>
 
-<span class="k">for</span> <span class="n">email</span> <span class="ow">in</span> <span class="n">emails</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">email</span> <span class="ow">in</span> <span class="n">emails</span><span class="p">:</span>
     <span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">email</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">match</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Valid Email: </span><span class="si">{</span><span class="n">email</span><span class="si">}</span><span class="s2">, Username: </span><span class="si">{</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2">, Domain: </span><span class="si">{</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -312,11 +339,13 @@ Filename: file3, Extension: docx
 </code></pre></div>
 
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+</code></pre></div>
 
-<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;\+?(\d{1,3})-(\d</span><span class="si">{3}</span><span class="s2">)-(\d</span><span class="si">{3}</span><span class="s2">)-(\d</span><span class="si">{4}</span><span class="s2">)&quot;</span>  <span class="c1"># Matches phone numbers like +1-123-456-7890</span>
+<div class="highlight"><pre><span></span><code><span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;\+?(\d{1,3})-(\d</span><span class="si">{3}</span><span class="s2">)-(\d</span><span class="si">{3}</span><span class="s2">)-(\d</span><span class="si">{4}</span><span class="s2">)&quot;</span>  <span class="c1"># Matches phone numbers like +1-123-456-7890</span>
 <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Contact: +1-123-456-7890 or 123-456-7890.&quot;</span>
+</code></pre></div>
 
-<span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Country Code:&quot;</span><span class="p">,</span> <span class="n">match</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;Phone Number:&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">match</span><span class="p">[</span><span class="mi">1</span><span class="p">:]))</span>
 <span class="c1"># Output:</span>
@@ -328,37 +357,23 @@ Filename: file3, Extension: docx
 </code></pre></div>
 
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span>
+</code></pre></div>
 
-<span class="k">def</span> <span class="nf">check_password</span><span class="p">(</span><span class="n">password</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">check_password</span><span class="p">(</span><span class="n">password</span><span class="p">):</span>
     <span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$%^&amp;+=]).{8,}$&quot;</span>
     <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
         <span class="k">return</span> <span class="s2">&quot;Strong Password&quot;</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="s2">&quot;Weak Password&quot;</span>
-
-<span class="n">passwords</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Password1!&quot;</span><span class="p">,</span> <span class="s2">&quot;weak&quot;</span><span class="p">,</span> <span class="s2">&quot;Strong1@&quot;</span><span class="p">,</span> <span class="s2">&quot;1234&quot;</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">pwd</span> <span class="ow">in</span> <span class="n">passwords</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pwd</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">check_password</span><span class="p">(</span><span class="n">pwd</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="c1"># Output:</span>
-<span class="c1"># Password1!: Strong Password</span>
-<span class="c1"># weak: Weak Password</span>
-<span class="c1"># Strong1@: Strong Password</span>
-<span class="c1"># 1234: Weak Password</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code>Password1!: Weak Password
-weak: Weak Password
-Strong1@: Strong Password
-1234: Weak Password
+<div class="highlight"><pre><span></span><code><span class="n">passwords</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Password1!&quot;</span><span class="p">,</span> <span class="s2">&quot;weak&quot;</span><span class="p">,</span> <span class="s2">&quot;Strong1@&quot;</span><span class="p">,</span> <span class="s2">&quot;1234&quot;</span><span class="p">]</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code>
+<div class="highlight"><pre><span></span><code><span class="n">check_password</span><span class="p">(</span><span class="s2">&quot;PAssword&quot;</span><span class="p">)</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code>
+<div class="highlight"><pre><span></span><code>&#39;Weak Password&#39;
 </code></pre></div>
 
 <div class="highlight"><pre><span></span><code>
@@ -374,7 +389,7 @@ Strong1@: Strong Password
 </code></pre></div>
 
 <hr>
-<p><strong>Score: 20</strong></p><p class="subheader">Category: <a href="https://hariz723.github.io/pynotes/category/regex.html">regex</a>
+<p><strong>Score: 45</strong></p><p class="subheader">Category: <a href="https://hariz723.github.io/pynotes/category/regex.html">regex</a>
 
 </p>
 

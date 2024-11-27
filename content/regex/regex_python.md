@@ -1,9 +1,9 @@
 ---
 title: Regex Python
-date: 2024-11-22
+date: 2024-11-27
 author: Your Name
-cell_count: 22
-score: 20
+cell_count: 46
+score: 45
 ---
 
 ```python
@@ -30,11 +30,12 @@ score: 20
 
 ```python
 import re
+```
 
 
+```python
 def func_match_word(pattern):
-    # Match a word
-    # pattern = r"\bis\b"  # Matches 'word' as a whole word
+
     text  = "This is a word in a sentence."
     match = re.search(pattern, text)  # search method search the Word we given inside
     if match:
@@ -42,6 +43,12 @@ def func_match_word(pattern):
     else:
         print(f'No matches found')
 
+# Match a word
+# pattern = r"\bis\b"  # Matches 'word' as a whole word
+```
+
+
+```python
 func_match_word(pattern=r"\bThis\b")
 func_match_word(r'\bis')
 
@@ -55,8 +62,10 @@ func_match_word(r'\bis')
 
 ```python
 import re
+```
 
 
+```python
 def func_find_all_matches(pattern):
     # Find all numbers in a string
     # pattern = r"\d+"  # Matches one or more digits
@@ -67,8 +76,10 @@ def func_find_all_matches(pattern):
         print(f"Matches : {matches}")
     else:
         print(f"No matches found")
+```
 
 
+```python
 func_find_all_matches(r"\d")
 func_find_all_matches(r"\d+")
 
@@ -108,7 +119,10 @@ func_replace_the_char(r'[He]')
 
 ```python
 import re
+```
 
+
+```python
 
 def func_split_the_word(pattern):
     # Split on spaces or commas
@@ -117,11 +131,15 @@ def func_split_the_word(pattern):
     result = re.split(pattern, text)
     print(result)  # Output: ['apple', '', 'orange', 'banana']
 
+```
+
+
+```python
+
 func_split_the_word(r'[, ]')
 func_split_the_word(r'[ ,]')
 
 # split th word [, ]
-
 ```
 
     ['apple', '', 'orange', 'banana']
@@ -131,7 +149,10 @@ func_split_the_word(r'[ ,]')
 
 ```python
 import re
+```
 
+
+```python
 
 def func_find_name_gmail(pattern):
 # Extract groups from a string
@@ -144,7 +165,10 @@ def func_find_name_gmail(pattern):
     print(f"TLD     : {match.group(3)}")   # Output: TLD: com
     # else:
     #     print(f'No matches found')
+```
 
+
+```python
 func_find_name_gmail(r"(\w+)@(\w+).(\w+)")
 ```
 
@@ -156,11 +180,19 @@ func_find_name_gmail(r"(\w+)@(\w+).(\w+)")
 
 ```python
 import re
+```
+
+
+```python
 
 pattern = r"((\d+)-(\d+))-(\d+)"
 text = "Example: 2024-11-22"
 match = re.search(pattern, text)
 
+```
+
+
+```python
 if match:
     print("Entire Match:", match.group(0))  # Output: 2024-11-22
     print("Group 1:", match.group(1))       # Output: 2024-11
@@ -180,16 +212,26 @@ if match:
 
 ```python
 # more e.g based on group func
-
 import re
+
+```
+
+    Entire Match: 12345
+
+
+
+```python
 
 pattern = r"(\d+)"
 text = "My number is 12345."
 match = re.search(pattern, text)
+```
+
+
+```python
 
 if match:
     print("Entire Match:", match.group(0))  # Output: Entire Match: 12345
-
 ```
 
     Entire Match: 12345
@@ -199,13 +241,26 @@ if match:
 ```python
 import re
 
+
+```
+
+    All Groups: ('2024', '11', '22')
+
+
+
+```python
+
 pattern = r"(\d+)-(\d+)-(\d+)"  # Matches a date format like '2024-11-22'
 text = "Today's date: 2024-11-22."
 match = re.search(pattern, text)
+```
+
+
+```python
+
 
 if match:
     print("All Groups:", match.groups())  # Output: ('2024', '11', '22')
-
 ```
 
     All Groups: ('2024', '11', '22')
@@ -215,15 +270,22 @@ if match:
 ```python
 import re
 
+```
+
+
+```python
+# new here re.IGNORECASE
 # Case-insensitive search
 pattern = r"hello"
 text = "Hello world"
 match = re.search(pattern, text, re.IGNORECASE)
+```
+
+
+```python
+
 if match:
     print("Found:", match.group())  # Output: Found: Hello
-
-
-# new here re.IGNORECASE
 ```
 
     Found: Hello
@@ -233,15 +295,24 @@ if match:
 ```python
 import re
 
+
+```
+
+
+```python
+
 pattern = r"(\d{4})-(\d{2})-(\d{2})"  # Matches dates in YYYY-MM-DD format
 text = "Today's date is 2024-11-22."
 
 match = re.search(pattern, text)
+```
+
+
+```python
 if match:
     print("Year:", match.group(1))  # Output: Year: 2024
     print("Month:", match.group(2))  # Output: Month: 11
     print("Day:", match.group(3))  # Output: Day: 22
-
 ```
 
     Year: 2024
@@ -252,12 +323,25 @@ if match:
 
 ```python
 import re
+```
+
+
+```python
 
 pattern = r"(\w+)\.(\w+)"  # Matches filenames with extensions
 text = "file1.txt, file2.pdf, file3.docx"
 
 matches = re.findall(pattern, text)
 print(f"matches: {matches}")
+```
+
+    matches: [('file1', 'txt'), ('file2', 'pdf'), ('file3', 'docx')]
+
+
+
+```python
+
+
 for filename, extension in matches:
     print(f"Filename: {filename}, Extension: {extension}")
 # Output:
@@ -267,7 +351,6 @@ for filename, extension in matches:
 
 ```
 
-    matches: [('file1', 'txt'), ('file2', 'pdf'), ('file3', 'docx')]
     Filename: file1, Extension: txt
     Filename: file2, Extension: pdf
     Filename: file3, Extension: docx
@@ -276,9 +359,16 @@ for filename, extension in matches:
 
 ```python
 import re
+```
 
+
+```python
 pattern = r"^(\w+)@(\w+)\.(\w+)$"  # Matches a basic email pattern
 emails = ["test@gmail.com", "invalid-email", "user123@domain.org"]
+```
+
+
+```python
 
 for email in emails:
     match = re.match(pattern, email)
@@ -290,7 +380,6 @@ for email in emails:
 # Valid Email: test@gmail.com, Username: test, Domain: gmail
 # Invalid Email: invalid-email
 # Valid Email: user123@domain.org, Username: user123, Domain: domain
-
 ```
 
     Valid Email: test@gmail.com, Username: test, Domain: gmail
@@ -302,8 +391,18 @@ for email in emails:
 ```python
 import re
 
+```
+
+
+```python
 pattern = r"\+?(\d{1,3})-(\d{3})-(\d{3})-(\d{4})"  # Matches phone numbers like +1-123-456-7890
 text = "Contact: +1-123-456-7890 or 123-456-7890."
+
+```
+
+
+```python
+
 
 matches = re.findall(pattern, text)
 for match in matches:
@@ -319,6 +418,10 @@ for match in matches:
 
 ```python
 import re
+```
+
+
+```python
 
 def check_password(password):
     pattern = r"^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$%^&+=]).{8,}$"
@@ -326,38 +429,24 @@ def check_password(password):
         return "Strong Password"
     else:
         return "Weak Password"
+```
 
+
+```python
 passwords = ["Password1!", "weak", "Strong1@", "1234"]
-for pwd in passwords:
-    print(f"{pwd}: {check_password(pwd)}")
-# Output:
-# Password1!: Strong Password
-# weak: Weak Password
-# Strong1@: Strong Password
-# 1234: Weak Password
-
-```
-
-    Password1!: Weak Password
-    weak: Weak Password
-    Strong1@: Strong Password
-    1234: Weak Password
-
-
-
-```python
-
 ```
 
 
 ```python
-
+check_password("PAssword")
 ```
 
 
-```python
 
-```
+
+    'Weak Password'
+
+
 
 
 ```python
@@ -381,4 +470,4 @@ for pwd in passwords:
 
 
 ---
-**Score: 20**
+**Score: 45**
