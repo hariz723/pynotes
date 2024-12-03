@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Zip-Poc</title>
+
+    <link rel="stylesheet" href="https://hariz723.github.io/pynotes/theme/css/normalize.css" />
+    <link rel="stylesheet" href="https://hariz723.github.io/pynotes/theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="https://hariz723.github.io/pynotes/theme/css/style.css" />
+    <link rel="stylesheet" href="https://hariz723.github.io/pynotes/theme/css/pygments.css" />	
+    <script src="https://hariz723.github.io/pynotes/theme/js/modernizr.js"></script>
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+	    <h1><a href="https://hariz723.github.io/pynotes">My Python Note Books</a></h1>
+    </div>
+</div>
+</div>
+
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
+
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+<article>
+    <header>
+        <h3 class="article-title"><a href="https://hariz723.github.io/pynotes/zip-poc.html" rel="bookmark"
+        title="Permalink to Zip-Poc">Zip-Poc</a></h3>
+    </header>
+
+<h6 class="subheader" title="2024-12-03T00:00:00-05:00">Tue 03 December 2024
+</h6>
+
+
+    <div class="highlight"><pre><span></span><code><span class="c1"># zip(iterable1, iterable2, ...)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># syntax of the zip function is above </span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">list2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">result</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span> <span class="n">list2</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>[(1, &#39;a&#39;), (2, &#39;b&#39;), (3, &#39;c&#39;)]
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># eg.2 </span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;uvid&#39;</span><span class="p">,</span> <span class="s1">&#39;userid&#39;</span><span class="p">,</span> <span class="s1">&#39;video_link&#39;</span><span class="p">]</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;link1&quot;</span><span class="p">]</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">result</span> <span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="n">values</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">result</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>{&#39;uvid&#39;: 0, &#39;userid&#39;: 1, &#39;video_link&#39;: &#39;link1&#39;}
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># eg.3</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">list2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">num</span><span class="p">,</span> <span class="n">char</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span> <span class="n">list2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number: </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s2">, Character: </span><span class="si">{</span><span class="n">char</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">Number</span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="o">,</span><span class="w"> </span><span class="n">Character</span><span class="o">:</span><span class="w"> </span><span class="n">a</span>
+<span class="n">Number</span><span class="o">:</span><span class="w"> </span><span class="mi">2</span><span class="o">,</span><span class="w"> </span><span class="n">Character</span><span class="o">:</span><span class="w"> </span><span class="n">b</span>
+<span class="n">Number</span><span class="o">:</span><span class="w"> </span><span class="mi">3</span><span class="o">,</span><span class="w"> </span><span class="n">Character</span><span class="o">:</span><span class="w"> </span><span class="n">c</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># eg.4</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">list2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">list3</span> <span class="o">=</span> <span class="p">[</span><span class="mf">10.5</span><span class="p">,</span> <span class="mf">20.5</span><span class="p">,</span> <span class="mf">30.5</span><span class="p">]</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">num</span><span class="p">,</span> <span class="n">char</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span> <span class="n">list2</span><span class="p">,</span> <span class="n">list3</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number: </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s2">, Character: </span><span class="si">{</span><span class="n">char</span><span class="si">}</span><span class="s2">, Value: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">Number</span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="o">,</span><span class="w"> </span><span class="n">Character</span><span class="o">:</span><span class="w"> </span><span class="n">a</span><span class="o">,</span><span class="w"> </span><span class="n">Value</span><span class="o">:</span><span class="w"> </span><span class="mf">10.5</span>
+<span class="n">Number</span><span class="o">:</span><span class="w"> </span><span class="mi">2</span><span class="o">,</span><span class="w"> </span><span class="n">Character</span><span class="o">:</span><span class="w"> </span><span class="n">b</span><span class="o">,</span><span class="w"> </span><span class="n">Value</span><span class="o">:</span><span class="w"> </span><span class="mf">20.5</span>
+<span class="n">Number</span><span class="o">:</span><span class="w"> </span><span class="mi">3</span><span class="o">,</span><span class="w"> </span><span class="n">Character</span><span class="o">:</span><span class="w"> </span><span class="n">c</span><span class="o">,</span><span class="w"> </span><span class="n">Value</span><span class="o">:</span><span class="w"> </span><span class="mf">30.5</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;uvid&#39;</span><span class="p">,</span> <span class="s1">&#39;userid&#39;</span><span class="p">,</span> <span class="s1">&#39;video_link&#39;</span><span class="p">]</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;link1&quot;</span><span class="p">]</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">uvid</span><span class="o">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="n">userid</span><span class="o">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="n">video_link</span><span class="o">:</span><span class="w"> </span><span class="n">link1</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#conclusion  : with using zip function we can able to convert the list into dict </span>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 20</strong></p>
+<p class="subheader">Category: <a href="https://hariz723.github.io/pynotes/category/basics.html">basics</a>
+
+</p>
+
+
+
+
+</article>
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Sidebar -->
+    <aside class="large-3 columns">
+        <h5 class="sidebar-title">Site</h5>
+        <ul class="side-nav">
+            <li><a href="https://hariz723.github.io/pynotes/archives.html">Archives</a>
+            <li><a href="https://hariz723.github.io/pynotes/tags.html">Tags</a>
+        </ul>
+
+		
+        <h5 class="sidebar-title">Categories</h5>
+        <ul class="side-nav">
+            <li><a href="https://hariz723.github.io/pynotes/category/basics.html">basics</a></li>
+            <li><a href="https://hariz723.github.io/pynotes/category/beautiful-soup.html">Beautiful-soup</a></li>
+            <li><a href="https://hariz723.github.io/pynotes/category/pandas-work.html">pandas-work</a></li>
+            <li><a href="https://hariz723.github.io/pynotes/category/python.html">python</a></li>
+            <li><a href="https://hariz723.github.io/pynotes/category/regex.html">regex</a></li>
+   
+        </ul>
+
+		
+        <h5 class="sidebar-title">Social</h5>
+        <ul class="side-nav">
+            <li><a href="https://github.com/hariz723/">GitHub</a></li>
+            <li><a href="<linkedin handle>">LinkedIn</a></li>
+        </ul>
+
+    </aside> <!-- End Sidebar -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-6 columns">
+              <!--                  <p>My Python Note Books by Hari</p> -->
+            </div>
+            </div>
+    </div>
+</footer>
+</body>
+</html>

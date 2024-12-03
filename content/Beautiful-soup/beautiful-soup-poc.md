@@ -1,6 +1,6 @@
 ---
 title: Beautiful-Soup-Poc
-date: 2024-11-28
+date: 2024-12-03
 author: Your Name
 cell_count: 76
 score: 75
