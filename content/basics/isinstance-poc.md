@@ -1,6 +1,6 @@
 ---
 title: Isinstance-Poc
-date: 2024-12-03
+date: 2025-02-10
 author: Your Name
 cell_count: 26
 score: 25
